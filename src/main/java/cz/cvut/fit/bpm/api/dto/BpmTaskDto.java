@@ -11,11 +11,10 @@ package cz.cvut.fit.bpm.api.dto;
 /**
  * @author Miroslav Ligas <miroslav.ligas@ibacz.eu>
  */
-public class BpmTaskDto {
+public class BpmTaskDto extends BpmBaseDto{
     private String owner;
     private String processId;
     private String processName;
-    private String id;
    	private String name;
    	private String status;
    	private String state;
@@ -43,14 +42,6 @@ public class BpmTaskDto {
 
     public void setProcessName(String processName) {
         this.processName = processName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {

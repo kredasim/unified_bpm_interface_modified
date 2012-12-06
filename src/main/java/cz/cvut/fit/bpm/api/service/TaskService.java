@@ -36,7 +36,7 @@ public interface TaskService {
      * @param userId user identification
      * @return list of tasks
      */
-    List<BpmTaskDto> getStartedTasksForUser(String userId);
+    List<BpmTaskDto> getAssignedTasksForUser(String userId);
 
     /**
      * Method returns all available tasks for user but not the tasks already assigned to the user.
@@ -70,6 +70,15 @@ public interface TaskService {
      * @param data   data which should be submitted with the task
      */
     void completeTask(String taskId, Map<String, Object> data);
+
+    /**
+     * Method completes identified task and submits provided data.
+     *
+     * @param processId task identifier
+     * @param userId    user identification
+     * @param data      data which should be submitted with the task
+     */
+    void completeTask(String processId, String userId, Map<String, Object> data);
 
     /**
      * Get task info.

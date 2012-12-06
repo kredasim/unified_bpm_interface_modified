@@ -11,19 +11,10 @@ package cz.cvut.fit.bpm.api.dto;
 /**
  * @author Miroslav Ligas <miroslav.ligas@ibacz.eu>
  */
-public class BpmProcessDto {
-    private String processId;
+public class BpmProcessDto extends  BpmBaseDto{
    	private String processName;
    	private String startUrl;
    	private String type;
-
-    public String getProcessId() {
-        return processId;
-    }
-
-    public void setProcessId(String processId) {
-        this.processId = processId;
-    }
 
     public String getProcessName() {
         return processName;
