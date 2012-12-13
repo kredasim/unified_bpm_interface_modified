@@ -90,7 +90,7 @@ public interface TaskService {
     BpmTaskDto getTaskById(String taskId);
 
     /**
-     * Method return task id for the process instance identification and user.
+     * Method return task id for the process instance identifier and user.
      *
      * @param processId process instance identifier
      * @param userId    user id
