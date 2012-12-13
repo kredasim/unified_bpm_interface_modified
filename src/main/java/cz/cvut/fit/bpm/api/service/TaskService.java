@@ -8,10 +8,10 @@
  * =========================================================================== */
 package cz.cvut.fit.bpm.api.service;
 
-import cz.cvut.fit.bpm.api.dto.BpmTaskDto;
-
 import java.util.List;
 import java.util.Map;
+
+import cz.cvut.fit.bpm.api.dto.BpmTaskDto;
 
 /**
  * @author Miroslav Ligas <miroslav.ligas@ibacz.eu>
@@ -22,6 +22,7 @@ public interface TaskService {
      * Method returns all available tasks for user.
      * <p/>
      * Only active tasks are returned.
+     *
      *
      * @param userId user identification
      * @return list of tasks
@@ -43,42 +44,37 @@ public interface TaskService {
      * <p/>
      * Only active tasks are returned.
      *
+     *
      * @param userId user identification
      * @return list of tasks
      */
     List<BpmTaskDto> getAvailableTasksForUser(String userId);
 
     /**
-     * Method starts the process identified by process identifier string.
+     * Method returns all available tasks for given group.
+     * <p/>
+     * Only active tasks are returned.
      *
-     * @param processId process identifier
-     * @return id of the started task
+     *
+     * @param groupId group identification
+     * @return list of tasks
      */
-    String startTask(String processId);
+    List<BpmTaskDto> getAvailableTasksForGroup(String groupId);
 
     /**
      * Method completes identified task.
      *
-     * @param taskId task identifier
+     * @param processId process instance identifier
      */
-    void completeTask(String taskId);
+    void completeTask(String processId);
 
     /**
      * Method completes identified task and submits provided data.
      *
-     * @param taskId task identifier
-     * @param data   data which should be submitted with the task
-     */
-    void completeTask(String taskId, Map<String, Object> data);
-
-    /**
-     * Method completes identified task and submits provided data.
-     *
-     * @param processId task identifier
-     * @param userId    user identification
+     * @param processId process instance identifier
      * @param data      data which should be submitted with the task
      */
-    void completeTask(String processId, String userId, Map<String, Object> data);
+    void completeTask(String processId, Map<String, Object> data);
 
     /**
      * Get task info.

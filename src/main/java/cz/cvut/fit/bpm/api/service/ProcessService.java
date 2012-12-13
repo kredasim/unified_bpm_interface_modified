@@ -8,9 +8,9 @@
  * =========================================================================== */
 package cz.cvut.fit.bpm.api.service;
 
-import cz.cvut.fit.bpm.api.dto.BpmProcessDto;
-
 import java.util.List;
+
+import cz.cvut.fit.bpm.api.dto.BpmProcessDto;
 
 /**
  * @author Miroslav Ligas <miroslav.ligas@ibacz.eu>
@@ -20,8 +20,16 @@ public interface ProcessService {
     /**
      * Returns all available processes for specified user.
      *
-     * @param userId user identifier
-     * @return list of processes
+     * @param userId user identifier.
+     * @return list of processes.
      */
     List<BpmProcessDto> getAllProcessesForUser(String userId);
+
+    /**
+     * Method starts the process identified by process identifier string.
+     *
+     * @param processId process identifier.
+     * @return id of the started process instance.
+     */
+    String startProcess(String processId);
 }
