@@ -23,7 +23,6 @@ public interface TaskService {
      * <p/>
      * Only active tasks are returned.
      *
-     *
      * @param userId user identification
      * @return list of tasks
      */
@@ -44,7 +43,6 @@ public interface TaskService {
      * <p/>
      * Only active tasks are returned.
      *
-     *
      * @param userId user identification
      * @return list of tasks
      */
@@ -55,26 +53,33 @@ public interface TaskService {
      * <p/>
      * Only active tasks are returned.
      *
-     *
      * @param groupId group identification
      * @return list of tasks
      */
     List<BpmTaskDto> getAvailableTasksForGroup(String groupId);
 
     /**
+     * Method is used to claim tasks for
+     *
+     * @param taskId task identifier
+     * @param userId user id
+     */
+    void claimTask(String taskId, String userId);
+
+    /**
      * Method completes identified task.
      *
-     * @param processId process instance identifier
+     * @param taskId task identifier
      */
-    void completeTask(String processId);
+    void completeTask(String taskId);
 
     /**
      * Method completes identified task and submits provided data.
      *
-     * @param processId process instance identifier
-     * @param data      data which should be submitted with the task
+     * @param taskId task identifier
+     * @param data   data which should be submitted with the task
      */
-    void completeTask(String processId, Map<String, Object> data);
+    void completeTask(String taskId, Map<String, Object> data);
 
     /**
      * Get task info.
@@ -83,4 +88,13 @@ public interface TaskService {
      * @return task information
      */
     BpmTaskDto getTaskById(String taskId);
+
+    /**
+     * Method return task id for the process instance identification and user.
+     *
+     * @param processId process instance identifier
+     * @param userId    user id
+     * @return task id
+     */
+    String getTaskIdByProcessInstance(String processId, String userId);
 }
