@@ -11,7 +11,7 @@ package cz.cvut.fit.bpm.api.dto;
 /**
  * @author Miroslav Ligas <miroslav.ligas@ibacz.eu>
  */
-public class BpmTaskDto extends BpmBaseDto{
+public class BpmTaskDto extends BpmBaseDto {
     private String owner;
     private String processId;
     private String processName;
