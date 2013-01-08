@@ -13,7 +13,7 @@ import java.io.Serializable;
 /**
  * @author Miroslav Ligas <miroslav.ligas@ibacz.eu>
  */
-public class ProjectDto implements Serializable {
+public class ProjectDto extends CodebookEntity implements Serializable {
     private String name;
 
     public String getName() {

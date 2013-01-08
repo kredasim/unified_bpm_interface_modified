@@ -2,7 +2,7 @@ package cz.cvut.fit.bpm.api.dto;
 
 import java.io.Serializable;
 
-public class RoleDto implements Serializable {
+public class RoleDto extends CodebookEntity implements Serializable {
 	
     private String name;
     private String description;

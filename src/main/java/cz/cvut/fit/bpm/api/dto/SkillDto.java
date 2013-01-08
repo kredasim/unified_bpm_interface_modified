@@ -2,7 +2,7 @@ package cz.cvut.fit.bpm.api.dto;
 
 import java.io.Serializable;
 
-public class SkillDto implements Serializable {
+public class SkillDto extends CodebookEntity implements Serializable {
 
     private int upperSkillId;
     private String type;

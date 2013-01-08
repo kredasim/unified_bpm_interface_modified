@@ -3,7 +3,7 @@ package cz.cvut.fit.bpm.api.dto;
 import java.io.Serializable;
 import java.util.List;
 
-public class UnitRoleDto implements Serializable {
+public class UnitRoleDto extends CodebookEntity implements Serializable {
     private RoleDto role;
     private String description;
     private List<PersonDto> nomination;

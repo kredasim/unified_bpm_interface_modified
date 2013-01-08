@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author Miroslav Ligas
  */
-public class AttachmentDto implements Serializable {
+public class AttachmentDto extends CodebookEntity implements Serializable {
 
     private String fileLink;
     private String comment;
@@ -40,7 +40,8 @@ public class AttachmentDto implements Serializable {
         this.downloadAddress = downloadAddress;
     }
 
-    @Override
+    
+	@Override
     public String toString() {
         return "AttachmentDto{" +
                 "fileLink='" + fileLink + '\'' +
